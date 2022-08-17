@@ -23,16 +23,15 @@ const SplashScreen = ({navigation}) => {
             <Animatable.Image 
                 animation="bounceIn"
                 duraton="1500"
-            source={require('../assets/log.png')}
+            source={require('../assets/aguila.png')}
             style={styles.logo}
-            resizeMode="stretch"
+            
             />
         </View>
         <Text style={[styles.title2, {
-                color: 'white'
-            }]}></Text>
-            <Text style={styles.text}></Text>
-
+                color: 'black'
+            }]}>Sector Oriente  </Text>
+        
             <Text style={[styles.title, {
                 color: 'white'
             }]}></Text>
@@ -44,7 +43,7 @@ const SplashScreen = ({navigation}) => {
             <View style={styles.button}>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
                 <LinearGradient
-                    colors={['#AB2F74', '#AB2F74']}
+                    colors={['#406FE7', '#406FE7']}
                     style={styles.signIn}
                 >
                     <Text style={styles.textSign}>Inicio</Text>
@@ -59,7 +58,7 @@ const SplashScreen = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
             
-            <LinearGradient
+            {/* <LinearGradient
                     colors={['#AB2F74', '#AB2F74']}
                     style={styles.signIn2}
                 >
@@ -70,8 +69,8 @@ const SplashScreen = ({navigation}) => {
                         size={5}
                        
                     />
-                </LinearGradient>
-                </TouchableOpacity>
+                </LinearGradient>*/}
+                </TouchableOpacity> 
             </View>
         
       </View>
@@ -86,7 +85,7 @@ const height_logo = height * 0.27;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#0D0D0D'
+    backgroundColor: '#BFB1B1'
   },
   header: {
       flex: 2,
@@ -107,16 +106,16 @@ const styles = StyleSheet.create({
   },
   title: {
       color: '#05375a',
-      fontSize: 25,
+      fontSize: 20,
       fontWeight: 'bold',
       justifyContent:'center',
       textAlign:'center',
       marginEnd:0,
-      marginTop:-85
+      marginTop:10
   },
   title2: {
     color: '#05375a',
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
     justifyContent:'center',
     textAlign:'center',
@@ -139,8 +138,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       borderRadius: 50,
       flexDirection: 'row',
-      marginBottom:30,
-      marginRight:14,
+      marginBottom:230,
+      marginRight:27,
     
   },
   signIn2: {
@@ -151,7 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     flexDirection: 'row',
     marginBottom:150,
-    marginRight:14,
+    marginRight:27,
   
 },
   textSign: {

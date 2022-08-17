@@ -173,7 +173,7 @@ columna:{
   borderBottomLeftRadius:15,
   borderBottomRightRadius:15,
   borderTopRightRadius: 15,
-  marginLeft: 10,
+  marginLeft: 27,
   marginHorizontal: 10,
 },
 fondo:{

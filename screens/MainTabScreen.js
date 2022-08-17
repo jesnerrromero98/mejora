@@ -6,19 +6,20 @@ import WebviewScreen from './WebviewScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SupportScreen from './SupportScreen';
 
+
 import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
-import SettingsScreen from'./SettingsScreen';
+// se importa las pantalla que se va a navegar
+import Unidad202Screen from './Vehliviano/Unidad_202'
+import Unidad035Screen from './Vehpesado/Unidad_035'
 
+//se crea el stackNavigator de cada pantalla para navegar 
+// a las diferentes pantallas
 const WebStack= createStackNavigator();
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
-const ProfilesStack = createStackNavigator();
-const SettingsStack=createStackNavigator();
-const ExploreStack=createStackNavigator();
-const SupportStack=createStackNavigator();
+const Unidad202Stack=createStackNavigator();
+const Unidad035Stack=createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,15 +27,17 @@ const MainTabScreen = () => (
     <Tab.Navigator
       initialRouteName="Home"
       activeColor="#fff"
+      barStyle={{ backgroundColor: "#1246ff" }}
+      
     >
       <Tab.Screen
         name="Home"
         component={HomeStackScreen}
         options={{
           tabBarLabel: 'Inicio',
-          tabBarColor: '#AB2F74',
+          tabBarColor: '#406fe7',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-home" color={color} size={26} />
+            <Icon name="ios-car" color={color} size={26} />
           ),
         }}
       />
@@ -42,32 +45,10 @@ const MainTabScreen = () => (
         name="Emergencia"
         component={DetailsStackScreen}
         options={{
-          tabBarLabel: 'N* emergencia',
+          tabBarLabel: 'Vehiculo Pesado',
           tabBarColor: '#AB2F74',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-call" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Lugares Seguro"
-        component={ProfilesStackScreen}
-        options={{
-          tabBarLabel: 'Lugares Seguro',
-          tabBarColor: '#AB2F74',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-map" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Servicios Sociales"
-        component={ExploreStackScreen}
-        options={{
-          tabBarLabel: 'Servicio Social',
-          tabBarColor: '#AB2F74',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-services" color={color} size={26} />
+            <Icon name="ios-car" color={color} size={26} />
           ),
         }}
       />
@@ -79,7 +60,8 @@ export default MainTabScreen;
 const HomeStackScreen = ({navigation}) => (
 <HomeStack.Navigator screenOptions={{
         headerStyle: {
-        backgroundColor: '#AB2F74',
+
+        backgroundColor: '#1246ff',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -87,88 +69,45 @@ const HomeStackScreen = ({navigation}) => (
         }
     }}>
         <HomeStack.Screen name="Home" component={HomeScreen} options={{
-        title:'HATI-HATI',
+        title:'Vehiculo Liviano',
         headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#AB2F74" onPress={() => navigation.openDrawer()}></Icon.Button>
+            <Icon.Button name="ios-menu" size={25} backgroundColor="#1246ff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
         }} />
-        <WebStack.Screen name="Denuncia" component={WebviewScreen} options={{
-          /*headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )*/
-          }} />
        
-       <ProfilesStack.Screen name="Lugares Seguro" component={ProfileScreen} options={{
-         /*headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )*/
-        }} />
-        <DetailsStack.Screen name="Numero de Emergencia" component={DetailsScreen} options={{
-          /*headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )*/
-          }} />
+      <Unidad202Stack.Screen name="Unidad202" component={Unidad202Screen} options={{
+       
+       title:'Unidad 202',    
+        /* headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer('HomeStackScreen')}></Icon.Button>
+              )*/
+      }} />
 
 </HomeStack.Navigator>
 );
-const ProfilesStackScreen = ({navigation}) => (
-  <ProfilesStack.Navigator screenOptions={{
-          headerStyle: {
-          backgroundColor: '#AB2F74',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-          fontWeight: 'bold'
-          }
-      }}>
-          <ProfilesStack.Screen name="Lugares Seguro" component={ProfileScreen} options={{
-         /* headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-          )*/
-          }} />
-  </ProfilesStack.Navigator>
-  );
-    
+
 
 const DetailsStackScreen = ({navigation}) => (
 <DetailsStack.Navigator screenOptions={{
         headerStyle: {
-        backgroundColor: '#AB2F74',
+        backgroundColor: '#1246ff',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
         fontWeight: 'bold'
         }
     }}>
-        <DetailsStack.Screen name="Numeros de Emergencia" component={DetailsScreen} options={{
+        <DetailsStack.Screen name="Vehiculos Pesado" component={DetailsScreen} options={{
        /* headerLeft: () => (
             <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )*/
         }} />
+
+        <Unidad035Stack.Screen name="Unidad035" component={Unidad035Screen} options={{
+            title:'Unidad 305',    
+              /* headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer('HomeStackScreen')}></Icon.Button>
+              )*/
+         }} />
 </DetailsStack.Navigator>
-);
-const ExploreStackScreen = ({navigation}) => (
-  <ExploreStack.Navigator screenOptions={{
-          headerStyle: {
-          backgroundColor: '#AB2F74',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-          fontWeight: 'bold'
-          }
-      }}>
-          <ExploreStack.Screen name="Servicios Sociales" component={ExploreScreen} options={{
-         /* headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-          )*/
-          }} />
-
-          
-        <SupportStack.Screen name="Reservar Cita" component={SupportScreen} options={{
-          /*headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
-        )*/
-          }} />
-  </ExploreStack.Navigator>
-
 );

@@ -27,8 +27,8 @@ export function DrawerContent(props) {
     const { signOut, toggleTheme } = React.useContext(AuthContext);
 
     return(
-        <View style={{flex:1}}>
-            <DrawerContentScrollView {...props}>
+        <View style={{flex:1,backgroundColor:"#bfb1b1"}}>
+           {/*  <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',marginTop: 15}}>
@@ -124,17 +124,17 @@ export function DrawerContent(props) {
                         </TouchableRipple>
                     </Drawer.Section>
                 </View>
-            </DrawerContentScrollView>
+            </DrawerContentScrollView>*/}
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
-                    icon={({color, size}) => (
+                    icon={({size}) => (
                         <Icon 
                         name="exit-to-app" 
-                        color={color}
+                        color="black"
                         size={size}
                         />
                     )}
-                    label="Sign Out"
+                    label="Salir"
                     onPress={() => {signOut()}}
                 />
             </Drawer.Section>
@@ -167,6 +167,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       marginRight: 15,
+      
     },
     paragraph: {
       fontWeight: 'bold',
@@ -177,8 +178,12 @@ const styles = StyleSheet.create({
     },
     bottomDrawerSection: {
         marginBottom: 15,
-        borderTopColor: '#f4f4f4',
-        borderTopWidth: 1
+        borderTopColor: 'white',
+        borderRadius:5,
+        
+        backgroundColor:"#406fe7",
+        borderTopWidth: 2,
+        marginTop:10
     },
     preference: {
       flexDirection: 'row',

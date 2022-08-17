@@ -1,215 +1,202 @@
-import React, { Component } from 'react';
-import  { Image, Linking , StyleSheet }
-from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import React from 'react';
+import {View, SafeAreaView,Image, StyleSheet, ScrollView, Dimensions, ImageBackground} from 'react-native';
+//import Encabezado from './../component/encabezado';
+import {useNavigation} from '@react-navigation/native';
+import Unidad202Screen from '././Vehliviano/Unidad_202';
+import {
+  Avatar,
+  Title,
+  Card,
+  Paragraph,
+  Button,
+  IconButton,
+  Caption,
+  Icon,
+  Text,
+  TouchableRipple,
+} from 'react-native-paper';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
-
-export default class DetailsScreen extends Component {
-
-  render() {
-    
-    const handleCallPress = async() =>{
-      Linking.openURL("tel: 25122727");
-    };
-    const handleCall2Press = async() =>{
-        Linking.openURL("tel: 25122233");
-    };
-    const handleCall3Press = async() =>{
-      Linking.openURL("tel: 25122387");
-    };
-    const handleCall4Press = async() =>{
-      Linking.openURL("tel: 12345678");
-    };
-    return (
-      <Container style = {styles.fondo}>
-       
-        <Content >
-        <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}
-            >
-              
-              <Left >
-                <Image 
-                source={require('./../assets/poli.png')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Policia Nacional</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
+const DetailsScreen = ({navigation}) => {
+  
+  return(
+    <SafeAreaView style={style.container}>
              
-                <Button onPress={handleCallPress} style = {styles.But} >
-                   
-                  <Text style = {styles.icon}>Llamar</Text>
-                </Button>
-            
-              <Right>       
-              </Right>
-            </CardItem>
-            
-            <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
-              <Left >
-                <Thumbnail 
-                source={require('./../assets/Cruz-Roja.jpg')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Cruz Roja</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
-              <Button onPress={handleCall2Press} style = {styles.But} >
-                   
-                  <Text style = {styles.icon}>Llamar</Text>
-                </Button>
-            
-          
-              <Right>
-       
-              </Right>
-            </CardItem>
+     <ScrollView>
+      <View>
+        
+            <View style={style.heder}>
+              <Card style={style.card}>
+                <Image
+                  source={require('././../assets/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
 
-            <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
-              <Left >
-                
-                <Thumbnail 
-                source={require('./../assets/bomberos.jpg')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Bomberos</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
-          
-                  <Button onPress={handleCall3Press} style = {styles.But} >
-                    <Text style = {styles.icon}>Llamar</Text>
-                  </Button>
-                 
-              <Right>
-       
-              </Right>
-            </CardItem>
-            <Text style = {styles.separador}></Text>
+                <Title style={style.cardTitle} >Unidad 204</Title>
+                <Text style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>Bom San Migelito</Text>
+              
+                <Button
+                  style={style.btnSerrarcesion}
+                  onPress = {() => navigation.navigate('Unidad035')}>
+                  <Text style={style.cardTitle1}>Ver Mas..</Text></Button>               
+                  <View style={style.div1}/>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('././../assets/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 203</Title>
+                <Text  style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>MyD</Text>
+              </Card>
             
-        {/* <Header style = {styles.container}>
-        <Text style = {styles.titulo}>Contacto de Emergencia</Text>
-        </Header>
-        <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
-              <Left >
-                <Thumbnail 
-                source={require('./../assets/hos.jpg')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Maria Jarquin</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
-          
-                  <Button style = {styles.But} >
-                    <Text style = {styles.icon}>Llamar</Text>
-                  </Button>
-                 
-              <Right>
-       
-              </Right>
-            </CardItem> */}
-            <Text style = {styles.separador}></Text>
-        </Content>
-      </Container>
-    );
-  }
-}
-const styles =  StyleSheet.create({
+              <Card style={style.card}>
+                <Image
+                  source={require('././../assets/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 80</Title>
+                <Text style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>Bom Adicional</Text>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('././../assets/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Title style={style.cardTitle} >Unidad 55</Title>
+                <Text style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>Bom Santo Tomas</Text>
+              </Card>
+
+              <Card style={style.card}>
+                <Image
+                  source={require('././../assets/343.jpeg')}
+                  style = {style.imagen}  
+                /> 
+
+                <Text style={style.cardTitle} >Unidad 343</Text>
+                <Text style={style.cardText}>Buen Estado</Text>
+                <Text style={style.cardText1}>Bom Juigalpa</Text>
+              </Card>
+
+              
+              
+              <View style={style.div}/>
+            
+          </View>
+
+      </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const style = StyleSheet.create({
   container:{
-      backgroundColor: '#1D2021',
-      flexDirection: 'column',
-      alignItems: 'center',
+   flex:1,
+    backgroundColor:'#BFB1B1'
     
   },
-  titulo:{
-    fontSize: 18,
+    heder:{
+      marginTop:-1
+      },
+
+   hederTitle:{
+    alignItems:'center',
     fontWeight: 'bold',
-    color: "#ffffff",
-    textAlign:'center'
-},
+    color:'#3A3940',
+    fontSize: 20,
+    
+  },
 
-tit2:{
-  fontSize: 18,
-  fontWeight: 'bold',
-  marginTop:30,
-  marginStart:10,
-  color: '#ffffff',
-  textAlign:'center'
-},
-ti1:{
-  fontSize: 14,
-  color: '#ffffff',
- marginTop:1,
-  marginHorizontal:10,
-  textAlign:'center'
-},
-columna:{
-  flexDirection:'column',
- 
-  width: 340,
-  backgroundColor: '#1D2021',
-  height: 150,
-  borderTopLeftRadius:15,
-  borderBottomLeftRadius:15,
-  borderBottomRightRadius:15,
-  borderTopRightRadius: 15,
-  marginLeft: 10,
-  marginHorizontal: 10,
-},
-fondo:{
-  backgroundColor: '#0D0D0D',
-},
-
-imagen:{
-  width: 95,
-  height: 95,
-  resizeMode: 'cover',
-  borderRadius: 10,
-  marginLeft: 10,
-  marginTop: 110,
+   cardTitle: {
+    fontSize: 20,
+    marginLeft: 140,
+    marginTop: -100,
+    alignItems: 'center',
+    fontFamily:"Serif ",
+    color:'#fafafa',
+    
+  },
   
-},
-separador: {
-  width: 10
-},
-icon:{
-  height: 73,
-  marginTop: 55,
-  marginLeft:3,
-  color: "#ffffff",
-  fontSize:14 
-
+  cardTitle1: {
+    fontSize: 16,
+    marginLeft: 0,
+    marginTop: 90,
+    alignItems: 'center',
+    color:'#ffffff',
+    
+  },
+  cardText:{
+    color: "white",
+   
+    fontSize:15,
+    marginTop:-53,
+    marginLeft:140,
+    lineHeight: 120,
+  },
   
+  cardText1:{
+    color: "yellow",
+    
+    fontSize:15,
+    marginTop:-98,
+    marginLeft:140,
+    lineHeight: 120,
+  },
+
+  card:{
+    marginTop:15,
+    backgroundColor:'#406FE7', 
+    width: '95%',
+    marginHorizontal:10,
+    paddingHorizontal:15,
+    borderRadius:30
+  },
+
+  btnSerrarcesion:{
+    backgroundColor:"transparent",
+    marginTop: -45,
+    height:40,
+    width:125, 
+    borderRadius:30,
+    marginLeft:125
+  },
+
+  btnSerrarcesionText:{
+    color:'#E6FFFD',
+    alignContent:'space-around',
+    fontWeight:'bold'
+  },
+  imagen:{
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    borderRadius: 15,
+    borderWidth:1,
+    borderColor:"white",
+    marginLeft: 5,
+    marginTop: 18
 },
-ic2:{
-  color: "#ffffff",    
+
+div:{
+  height: 20
 },
-But:{
-  width: 95,
-  height: 45,
-  marginTop:60,
-  marginLeft:170,
-  borderRadius:15,
-  backgroundColor:"#90168C"
+
+div1:{
+  height: 10
 },
-But2:{
-  width: 95,
-  height: 45,
-  margin:-45,
-  marginLeft:200,
-  borderRadius:15,
-  backgroundColor:"#90168C"
-},
-})
+
+});
+
+
+export default DetailsScreen;
+

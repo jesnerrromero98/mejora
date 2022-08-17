@@ -63,7 +63,7 @@ But:{
   width: 200,
   height: 55,
   marginTop:50,
-  marginLeft:75,
+  marginLeft:100,
   borderRadius:15,
   backgroundColor:"#90168C"
 },
@@ -77,7 +77,7 @@ ti1:{
 icon:{
   height: 79,
   marginTop: 50,
-  marginLeft:60,
+  marginLeft:70,
   color: "#ffffff",
   fontSize:20,
   fontWeight: 'bold',
